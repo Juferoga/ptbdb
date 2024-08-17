@@ -27,7 +27,7 @@ def reverse_array(array):
   Reverses an array in place.
 
   Args:
-      array: A list of integers.
+    array: A list of integers.
   """
   left = 0
   right = len(array) - 1
