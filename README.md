@@ -4,13 +4,9 @@
 
 <center>
 
-[![Juan Felipe Rodriguez Galindo](https://img.shields.io/badge/Juferoga-github-br?style=flat-square)][1] <br>
+[![Juan Felipe Rodriguez Galindo](https://img.shields.io/badge/Juferoga-github-br?style=flat-square)][1]
 [![Python](https://img.shields.io/badge/Python-3-orange?style=flat-square)][2]
-[![Java](https://img.shields.io/badge/Java-17-red?style=flat-square)][3]
-[![Typescript](https://img.shields.io/badge/TypeScript-5-yellow?style=flat-square)][4]
-[![Javascript](https://img.shields.io/badge/JavaScript-ES6-violet?style=flat-square)][5]
-<br>
-[![License](https://img.shields.io/badge/License-GPLV3-blue?style=flat-square)][6]
+[![License](https://img.shields.io/badge/License-GPLV3-blue?style=flat-square)][3]
 
 </center>
 
@@ -20,8 +16,8 @@ Repositorio para almacenar el desarrollo de la prueba técnica del BDB.
 
 Las carpetas se organizarán de la siguiente forma:
 
-1. Docs  → Documentación técnica y presentación para el reto, documentación web alojada en [github][7].
-    * [Presentación.][8]
+1. Docs  → Documentación técnica y presentación para el reto, documentación web alojada en [github][4].
+    * [Presentación.][5]
 2. reto [1,2,3] → Desarrollo de los retos propuestos en la prueba técnica.
     * Reto 1 → Code challenge one (swap list with conditionals)
     * Reto 2 → Code challenge two (array with squares)
@@ -35,11 +31,8 @@ Para el presente proyecto se utilizó la metodología GITFLOW para el manejo de 
 
 * [Juan Felipe Rodriguez Galindo][1]
 
- [1]:https://gitlab.com/Juferoga
+ [1]:https://github.com/Juferoga
  [2]:https://www.python.org/
- [3]:https://www.java.com/es/
- [4]:https://www.typescriptlang.org/
- [5]:https://es.javascript.info/
- [6]:https://github.com/Juferoga/ptbdb/blob/main/LICENSE
- [7]:https://github.com/Juferoga/ptbdb/docs
- [8]:https://github.com/Juferoga/ptbdb/docs/presentacion.pdf
+ [3]:https://github.com/Juferoga/ptbdb/blob/main/LICENSE
+ [4]:https://github.com/Juferoga/ptbdb/docs
+ [5]:https://github.com/Juferoga/ptbdb/docs/presentacion.pdf
