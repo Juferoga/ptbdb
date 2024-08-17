@@ -1,5 +1,5 @@
 s=str(7)
-range = int(s+s)
+range_limit = int(s+s)
 
 def square_array(array):
   """
@@ -8,7 +8,8 @@ def square_array(array):
   Args:
     data: Array to modify.
   """
-  [i**2 for i in array]
+  return [i**2 for i in array]
+  
 
 def ascending_order_array(array):
   """
@@ -21,6 +22,7 @@ def ascending_order_array(array):
     for j in range(i+1, len(array)):
       if array[i] > array[j]:
         array[i], array[j] = array[j], array[i]
+  return array
 
 def modify_list_in_place(array):
   """
@@ -29,9 +31,11 @@ def modify_list_in_place(array):
   Args:
       data: Array to modify.
   """
-  for i in range(len(array)):
-    if array[i] > range:
-      array.pop(i)
+  aux_array = []
+  for i in array:
+    if i < range_limit and i >= 0:
+      aux_array.append(i)
+  return aux_array
 
 data = [
   [1, 2, 3, 5, 6, 8, 9],
@@ -49,16 +53,16 @@ for array in data:
   
   #! Las funciones no modifican el array original (arreglar)
   
-  # print("Función square_array y resultado")
-  # square_array(array)
-  # print(array)
+  print("Función square_array y resultado")
+  array=square_array(array)
+  print(array)
   
-  # print("Función ascending_order_array y resultado")
-  # ascending_order_array(array)
-  # print(array)
+  print("Función ascending_order_array y resultado")
+  array = ascending_order_array(array)
+  print(array)
   
-  # print("Función modify_list_in_place y resultado")
-  # modify_list_in_place(array)
-  # print(array)
+  print("Función modify_list_in_place y resultado")
+  array = modify_list_in_place(array)
+  print(array)
   
   i+=1
