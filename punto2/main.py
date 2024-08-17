@@ -51,8 +51,6 @@ for array in data:
   print("array original")
   print(array)
   
-  #! Las funciones no modifican el array original (arreglar)
-  
   print("Función square_array y resultado")
   array=square_array(array)
   print(array)
