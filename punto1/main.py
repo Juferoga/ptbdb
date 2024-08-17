@@ -52,7 +52,7 @@ for array in data:
   
   print(f"]----------[Test {i}]------------[")
   
-  print("array original")
+  print("Array original")
   print(array)
 
   print("Función modify_list_in_place y resultado")
