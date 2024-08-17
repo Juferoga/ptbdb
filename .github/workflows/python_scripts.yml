@@ -9,8 +9,10 @@ jobs:
   test-1:
     runs-on: ubuntu-latest
     steps:
+      - name: LS
+        run: ls -R punto
       - name: Ejecutar script 1
-        run: ls -R punto*; python ./punto1/main.py
+        run: python ./punto1/main.py
   test-2:
     runs-on: ubuntu-latest
     steps:
