@@ -47,16 +47,18 @@ for array in data:
   print("array original")
   print(array)
   
-  print("Función square_array y resultado")
-  square_array(array)
-  print(array)
+  #! Las funciones no modifican el array original (arreglar)
+  
+  # print("Función square_array y resultado")
+  # square_array(array)
+  # print(array)
   
   # print("Función ascending_order_array y resultado")
   # ascending_order_array(array)
   # print(array)
   
-  print("Función modify_list_in_place y resultado")
-  modify_list_in_place(array)
-  print(array)
+  # print("Función modify_list_in_place y resultado")
+  # modify_list_in_place(array)
+  # print(array)
   
   i+=1
