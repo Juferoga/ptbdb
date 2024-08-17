@@ -49,7 +49,6 @@ data =  [
 
 i=0
 for array in data:
-  
   print(f"]----------[Test {i}]------------[")
   
   print("Array original")
