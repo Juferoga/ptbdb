@@ -1,3 +1,5 @@
+s = 7
+
 def modify_list_in_place(data, s):
   """
   Modifies a list of numbers in-place by removing digits greater than or equal to 's'
@@ -20,7 +22,7 @@ def modify_list_in_place(data, s):
 
   del data[write_index:]
 
-def reverseArray(array): 
+def reverse_array(array): 
   """
   Reverses an array in place.
 
@@ -44,7 +46,6 @@ data =  [
   [7, 2, 1],
   [70, 7, 5, 4, 3, 2, 8, 8, 29, 1] 
 ] 
-s = 7
 
 i=0
 for array in data:
@@ -59,7 +60,7 @@ for array in data:
   print(array)
 
   print("Función reverseArray y resultado")
-  reverseArray(array)
+  reverse_array(array)
   print(array)
   
   i+=1
