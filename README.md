@@ -6,9 +6,6 @@
 
 [![Juan Felipe Rodriguez Galindo](https://img.shields.io/badge/Juferoga-github-br?style=flat-square)][1] <br>
 [![Python](https://img.shields.io/badge/Python-3-orange?style=flat-square)][2]
-[![Java](https://img.shields.io/badge/Java-17-red?style=flat-square)][3]
-[![Typescript](https://img.shields.io/badge/TypeScript-5-yellow?style=flat-square)][4]
-[![Javascript](https://img.shields.io/badge/JavaScript-ES6-violet?style=flat-square)][5]
 <br>
 [![License](https://img.shields.io/badge/License-GPLV3-blue?style=flat-square)][6]
 
@@ -35,7 +32,7 @@ Para el presente proyecto se utilizó la metodología GITFLOW para el manejo de 
 
 * [Juan Felipe Rodriguez Galindo][1]
 
- [1]:https://gitlab.com/Juferoga
+ [1]:https://github.com/Juferoga
  [2]:https://www.python.org/
  [3]:https://www.java.com/es/
  [4]:https://www.typescriptlang.org/
