@@ -1,16 +1,16 @@
 # Configurations
-title:            SIS - UD
-longtitle:        SEMINARIO DE INGENIERÍA DE SOFTWARE - UD
+title:            PT - BDB
+longtitle:        Prueba técnica - BDB
 author:           Juan Felipe Rodríguez
 email:            juferoga@github.com
 description: >
-  SEMINARIO DE INGENIERÍA DE SOFTWARE - UD.
+  Prueba técnica - BDB
 
 version:          1.0
 gitbook_version:  3.2.3
 
 url:              'https://juferoga.github.io'
-baseurl:          '/seminario'
+baseurl:          '/ptbdb'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
