@@ -1,0 +1,23 @@
+@startuml
+start
+  partition reverse_array {
+    :left = 0|
+    :right = len(array) - 1 |
+    note right
+      Definimos las variables de 
+      posición dentro del arreglo
+    end note
+
+    repeat
+      :array[left], array[right] = array[right], array[left]|
+      note left 
+        Reasignamos el valor del arreglo
+        en las posiciones left y right
+        invirtiendo el orden del arreglo
+      end note
+      :left += 1|
+      :right -= 1 |
+    repeatwhile (left < right)
+  }
+end
+@enduml

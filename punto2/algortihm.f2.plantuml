@@ -1,0 +1,13 @@
+@startuml reto 2
+  start
+    partition ascending_order_array{
+      repeat
+        repeat
+          if (array[i] > array[j]) then (yes)
+            :array[i], array[j] = array[j], array[i];
+          endif
+        repeat while (j in range(i+1, len(array))) is (yes)
+      repeat while (i in range(len(array))) is (yes)
+    }
+  end
+@enduml
