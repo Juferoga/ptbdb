@@ -29,10 +29,9 @@
     }
 
     :array = [1, 2, 3, 4, 5, 7]|
-
-    if (len(array) >= 100) then (yes)
-      :array = square_array(array)|
-      :array = ascending_order_array(array)|
-      :array = modify_list_in_place(array)|
+  
+    :array = square_array(array)|
+    :array = ascending_order_array(array)|
+    :array = modify_list_in_place(array)|
   end
 @enduml

@@ -9,9 +9,10 @@ partition reverse_array {
 }
 
 :arreglo = [1, 2, 3, 4, 5, 7] |
-
-:modify_list_in_place(arreglo, s);
-:reverse_array (arreglo);
+if (len(array) >= 100) then (yes)
+  :modify_list_in_place(arreglo, s);
+  :reverse_array (arreglo);
+endif
 
 stop
 @enduml
