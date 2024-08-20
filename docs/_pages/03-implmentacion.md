@@ -6,76 +6,188 @@ category: Jekyll
 layout: post
 ---
 
-## Arquitectura
+## Implementación Python
 
 ---
 
-![Infraestructura del proyecto con aws](/seminario/assets/images/pages/implementacion/infra_fis.svg "Infraestructura del proyecto con aws")
+## Reto 1
 
-### Costos de la arquitectura
+```python
+s = 7
 
-<div class="table-wrapper" markdown="block">
+def modify_list_in_place(data, s):
+  """
+  Modifies a list of numbers in-place by removing digits greater than or equal to 's'
+  and preserving the order, including leading zeros.
 
-  | category   | type | region    | count | unitPrice | cost  | instanceType | instanceSize | platform | role       | engine            | dataGb |
-  |------------|------|-----------|-------|-----------|-------|--------------|--------------|----------|------------|-------------------|--------|
-  | compute    | ec2  | us-east-1 | 1     | 15.18     | 15.18 | t3           | small        | Linux    |            |                   |        |
-  | networking | elb  | us-east-1 | 1     | 22.27     | 22.27 |              |              |          |            |                   | 10     |
-  | storage    | s3   | us-east-1 | 1     | 3.95      | 3.95  |              |              |          |            |                   | 0.25   |
-  | database   | rds  | us-east-1 | 1     | 43.8      | 43.8  | serverless   | serverless   |          | serverless | aurora-postgresql |        |
+  Args:
+      data: A list of integers.
+      s: The threshold for digit removal.
+  """
+  write_index = 0 
+  for num in data:
+    new_num_str = ""  # Almacenamos el nuevo número como cadena para preservar ceros a la izquierda
+    for digit_str in str(num):
+      digit = int(digit_str)
+      if digit < s:
+        new_num_str += digit_str
+    if new_num_str:  # Si la cadena no está vacía, convertimos a entero y agregamos
+      data[write_index] = int(new_num_str)
+      write_index += 1
 
-</div>
+  del data[write_index:]
 
-![Precios infraestructura del proyecto con aws](/seminario/assets/images/pages/implementacion/infra_fis_prices.png "Precios infraestructura del proyecto con aws")
+def reverse_array(array): 
+  """
+  Reverses an array in place.
 
-[Tool for diagram for cloud implementation.][1]
+  Args:
+    array: A list of integers.
+  """
+  left = 0
+  right = len(array) - 1
+  while left < right:
+    array[left], array[right] = array[right], array[left]
+    left += 1
+    right -= 1
 
-## Instalación
 
----
+data =  [
+  [1, 2, 3, 4, 5, 7],
+  [10, 20, 30, 40],
+  [7],
+  [77],
+  [75],
+  [7, 2, 1],
+  [70, 7, 5, 4, 3, 2, 8, 8, 29, 1] 
+] 
 
-[Instalación del sistema.][2]
+i=0
+for array in data:
+  if len(array) >= 100:
+    print(f"]----------[Test {i}]------------[")
+    
+    print("Array original")
+    print(array)
 
-## Sistema en producción
+    print("Función modify_list_in_place y resultado")
+    modify_list_in_place(array, s)
+    print(array)
 
----
+    print("Función reverseArray y resultado")
+    reverse_array(array)
+    print(array)
+  i+=1
 
-El sistema se encuentra desplegado en:
+```
 
-* [Despliegue front.][3]
-* [Despliegue back.][4]
-* [Despliegue traefik.][5]
+## Reto 2
 
-### extra
+```python
+s=str(7)
+range_limit = int(s+s)
 
-Se realiza el uso de Portainer, para el manejo de la arquitectura móvil de forma interactiva y fácil para el usuario.
+def square_array(array):
+  """
+  Modify the array in place squaring each element.
 
-* [Portainer.][6]
+  Args:
+    data: Array to modify.
+  """
+  return [i**2 for i in array]
+  
 
-## Soporte técnico post-instalación
+def ascending_order_array(array):
+  """
+  Modify the array in place ordering the elements in ascending order.
 
----
+  Args:
+    data: Array to modify.
+  """
+  for i in range(len(array)):
+    for j in range(i+1, len(array)):
+      if array[i] > array[j]:
+        array[i], array[j] = array[j], array[i]
+  return array
 
-Errores post-instalación? obvio si 😆. Para esto se planea con el cliente realizar el despliegue de una versión temprana del software, para el acceso verificación y detección de errores, los cuales serán corregidos en etapas posteriores.
+def modify_list_in_place(array):
+  """
+  Modify the array in place removing the elements greater than the range.
 
-### extras
+  Args:
+      data: Array to modify.
+  """
+  aux_array = []
+  for i in array:
+    if i < range_limit and i >= 0:
+      aux_array.append(i)
+  return aux_array
 
-El plan de detección de errores y post-instalación del software tiene como objetivo garantizar un despliegue exitoso y libre de problemas de nuestro producto. A continuación, se detallan los pasos a seguir, en la post-instalación inicial del producto (en su fase beta):
+data = [
+  [1, 2, 3, 5, 6, 8, 9],
+  [-2, -1],
+  [-6, -5, 0, 5, 6],
+  [-10, 10]
+]
 
-1. **Pruebas de funcionalidad:** Realice una serie de pruebas para verificar que todas las funciones del software estén operativas y que se comporten según lo esperado. Se probarán diferentes escenarios y casos de uso para asegurarse de que no haya errores o comportamientos inesperados.
+i=0
+for array in data:
+  if len(array) >= 100:
+    print(f"]----------[Test {i}]------------[")
+    
+    print("array original")
+    print(array)
+    
+    print("Función square_array y resultado")
+    array=square_array(array)
+    print(array)
+    
+    print("Función ascending_order_array y resultado")
+    array = ascending_order_array(array)
+    print(array)
+    
+    print("Función modify_list_in_place y resultado")
+    array = modify_list_in_place(array)
+    print(array)
+  i+=1
 
-2. **Verificación de integración:** Ya que el software se integra con otros sistemas o módulos, se deben realizar pruebas de integración para asegurarse de que la comunicación entre ellos sea correcta y que los datos se transmitan de manera adecuada.
+```
 
-3. **Detección y registro de errores:** Durante las pruebas, si encuentra algún error o comportamiento anómalo, se registrará detalladamente en un sistema de seguimiento de problemas o en un informe de errores. Incluya toda la información relevante, como pasos para reproducir el error, mensajes de error y cualquier otra observación útil.
+## Reto 3
 
-4. **Resolución de problemas:** Una vez identificados los errores, el equipo de soporte o desarrollo deberá analizarlos y trabajar en su resolución. Siga nuestras indicaciones para obtener orientación sobre cómo solucionar los problemas encontrados.
+```python
+def minimum_addition_unreachable(coins):
+  """
+  Find the minimum addition to be unreachable.
 
-5. **Actualizaciones y parches:** Se debe de mantener el software actualizado instalando las actualizaciones y parches proporcionados por el equipo de desarrollo. Estas actualizaciones pueden incluir mejoras de rendimiento, correcciones de errores y nuevas funciones. Siga los procedimientos recomendados para aplicar estas actualizaciones de manera adecuada.
+  Args:
+    array: A list of integers (coins).
+  """
+  addition_reachable = 0 # La minima suma alcanzable
+  for coin in coins:
+    if coin > addition_reachable + 1:
+      return addition_reachable + 1 # Si la moneda es mayor a la suma alcanzable + 1, retornamos la suma alcanzable + 1
+    addition_reachable += coin # Suma la moneda a la suma alcanzable
+  return addition_reachable + 1 # Si no se cumple la condición anterior, retornamos la suma alcanzable + 1
 
-6. **Documentación:** Se proporcionará una documentación clara y actualizada disponible para referencia futura. Esto ayudará a los usuarios uso del software y resolución de los problemas.
+data = [
+  [5, 7, 1, 1, 2, 3, 22],
+  [1, 1, 1, 1, 1],
+  [1, 5, 1, 1, 1, 10, 15, 20, 100]
+]
 
-[1]:https://www.cloudcraft.co/
-[2]:https://juferoga.github.io/seminario/pages/04-evaluacion/#ensamblado-del-sistema
-[3]:https://seminario.juferoga.live
-[4]:https://back.juferoga.live
-[5]:https://tk.juferoga.live
-[6]:https://pt.juferoga.live
+i=0
+for coins in data:
+  print(f"]----------[Test {i}]------------[")
+  
+  print("Original")
+  print(coins)
+  
+  coins = sorted(coins)
+  print("Organized", sorted(coins))
+  
+  print("Minimum addition to be unreachable")
+  print(minimum_addition_unreachable(coins))
+  
+  i+=1
+```
