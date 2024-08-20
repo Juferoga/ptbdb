@@ -49,7 +49,7 @@ data =  [
 
 i=0
 for array in data:
-  if len(array) >= 100:
+  if len(array) <= 100:
     print(f"]----------[Test {i}]------------[")
     
     print("Array original")
