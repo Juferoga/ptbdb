@@ -1,0 +1,66 @@
+@startuml
+start
+:s = 7|
+
+partition modify_list_in_place {
+  :write_index = 0|
+
+  repeat
+    :new_num_str = ''|
+    note left 
+      Almacenamos el nuevo número como 
+      cadena para preservar ceros a la 
+      izquierda
+    end note
+    repeat
+      :digit = int(digit_str)|
+      if (digit < s) then (yes)
+        :new_num_str += digit_str ]
+      endif
+    repeatwhile (digit_str in str(num))
+
+    if (new_num_str) then (yes)
+      note left
+        Si la cadena no está 
+        vacia convertimos 
+        a entero y lo agregamos
+      end note
+      :data[write_index] = int(new_num_str) ]
+      :write_index += 1 ]
+    endif
+  repeatwhile (num in data)
+
+  : del data[write_index:] ]
+  note right
+    Elimina todos los elementos 
+    en la lista data
+    desde write_index
+  end note
+}
+partition reverse_array {
+  :left = 0|
+  :right = len(array) - 1 |
+  note right
+    Definimos las variables de 
+    posición dentro del arreglo
+  end note
+
+  repeat
+    :array[left], array[right] = array[right], array[left]|
+    note left 
+      Reasignamos el valor del arreglo
+      en las posiciones left y right
+      invirtiendo el orden del arreglo
+    end note
+    :left += 1|
+    :right -= 1 |
+  repeatwhile (left < right)
+}
+
+:arreglo = [1, 2, 3, 4, 5, 7] |
+
+:modify_list_in_place(arreglo, s);
+:reverse_array (arreglo);
+
+stop
+@enduml

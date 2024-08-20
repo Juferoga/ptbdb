@@ -49,17 +49,17 @@ data =  [
 
 i=0
 for array in data:
-  print(f"]----------[Test {i}]------------[")
-  
-  print("Array original")
-  print(array)
+  if len(coins) >= 100:
+    print(f"]----------[Test {i}]------------[")
+    
+    print("Array original")
+    print(array)
 
-  print("Función modify_list_in_place y resultado")
-  modify_list_in_place(array, s)
-  print(array)
+    print("Función modify_list_in_place y resultado")
+    modify_list_in_place(array, s)
+    print(array)
 
-  print("Función reverseArray y resultado")
-  reverse_array(array)
-  print(array)
-  
+    print("Función reverseArray y resultado")
+    reverse_array(array)
+    print(array)
   i+=1

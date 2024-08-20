@@ -1,0 +1,12 @@
+@startuml reto 2
+  start
+    partition modify_list_in_place{
+      :aux_array = []|
+      repeat
+        if (i < range_limit and i >= 0) then (yes)
+          :aux_array.append(i)|
+        endif
+      repeat while (i in array) is (yes)
+    }
+  end
+@enduml

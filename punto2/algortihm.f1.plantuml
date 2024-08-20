@@ -1,0 +1,9 @@
+@startuml reto 2
+  start
+    partition square_array{
+      repeat
+        :i = i**2|
+      repeat while (i in array) is (yes)
+    }
+  end
+@enduml
