@@ -1,0 +1,29 @@
+@startuml reto 3
+  start
+    :coins = [1, 2, 5, 10]|
+    note left
+      Definimos una lista de monedas disponibles
+    end note
+    partition minimum_addition_unreachable{
+      :addition_reachable = 0;
+      repeat
+        if (coin > addition_reachable + 1) then (yes)
+          :return addition_reachable + 1;
+          note left
+            Si hay una moneda mayor a la suma alcanzable + 1,
+            retornamos la siguiente suma no alcanzable
+          end note
+        endif
+        :addition_reachable += coin;
+        note left
+          Actualizamos la suma alcanzable
+        end note
+      repeat while (coin in coins) is (yes)
+      :return addition_reachable + 1;
+      note left
+        Repetimos mientras haya monedas disponibles,
+        retornamos la siguiente suma no alcanzable
+      end note
+    }
+  end
+@enduml

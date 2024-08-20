@@ -46,21 +46,21 @@ data = [
 
 i=0
 for array in data:
-  print(f"]----------[Test {i}]------------[")
-  
-  print("array original")
-  print(array)
-  
-  print("Función square_array y resultado")
-  array=square_array(array)
-  print(array)
-  
-  print("Función ascending_order_array y resultado")
-  array = ascending_order_array(array)
-  print(array)
-  
-  print("Función modify_list_in_place y resultado")
-  array = modify_list_in_place(array)
-  print(array)
-  
+  if len(array) >= 100:
+    print(f"]----------[Test {i}]------------[")
+    
+    print("array original")
+    print(array)
+    
+    print("Función square_array y resultado")
+    array=square_array(array)
+    print(array)
+    
+    print("Función ascending_order_array y resultado")
+    array = ascending_order_array(array)
+    print(array)
+    
+    print("Función modify_list_in_place y resultado")
+    array = modify_list_in_place(array)
+    print(array)
   i+=1
