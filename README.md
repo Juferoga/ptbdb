@@ -35,4 +35,4 @@ Para el presente proyecto se utilizó la metodología GITFLOW para el manejo de 
  [2]:https://www.python.org/
  [3]:https://github.com/Juferoga/ptbdb/blob/main/LICENSE
  [4]:https://github.com/Juferoga/ptbdb/docs
- [5]:https://github.com/Juferoga/ptbdb/docs/presentacion.pdf
+ [5]:https://raw.githubusercontent.com/Juferoga/ptbdb/main/docs/presentacion.pdf
